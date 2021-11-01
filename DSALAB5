@@ -1,0 +1,63 @@
+class node:
+    def _init_(self, data=None):
+     self.data = data
+     self.next = None
+     print('Node has been created')
+
+class linkedlist:
+    def _init_(self):
+        self.head=node()
+        count=0
+        print('Head is initialized')
+    def append1(self, data):
+     newNode = node(data)
+     curr = self.head
+     while (curr.next!=None):
+       curr=curr.next
+     curr.next = newNode
+    
+    def display(self):
+     curr=self.head
+     dis=[]
+     while curr.next!=None:
+        curr=curr.next
+        dis.append(curr.data)
+     print(dis)
+    
+    def delete(self):
+      curr=self.head
+      while (curr.next.next):
+        secondlast_node=curr.next
+        curr=curr.next
+      curr.next=None
+      
+    def insert(self,after,newdata):
+        newNode=node(newdata)
+        curr=self.head
+        while curr.next!=None:
+            if (curr.data==after):
+                newNode.next=curr.next
+                curr.next=newNode
+                print("Hence it is inserted")
+            curr=curr.next
+     
+    def Inbetween(self,middle_node,newdata):
+     print("Hence node is absent")
+     return
+     newNode = node(newdata)
+     NewNode.next = middle_node.next
+     middle_node.next = NewNode
+
+    def delete(self):
+        curr=self.head
+        while (curr.next.next):
+            secondLastNode=curr.next
+            curr=curr.next
+        curr.next=None
+     
+L=linkedlist()
+L.append1(1)
+L.insert(1,3)
+L.Inbetween(2)
+L.delete()
+L.display()
